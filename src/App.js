@@ -1,12 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import MovieCard from './Component/MovieCard';
 import MovieList from './Component/MovieList';
+import { Link, Routes,Route } from 'react-router-dom';
+import MovieDetails from './Component/MovieDetails';
+
 
 const App =()=> {
   return (
     <div className="App">
-        <MovieList />
+      <button><Link to="">Home</Link></button>
+      <button><Link to="/moviechannel">Movie Channel</Link></button>
+      
+      <Routes>
+        <Route exact path="/moviechannel" element={ <MovieList />} />
+        <Route path="/moviechannel/:moviedId" element={ <MovieDetails />} />
+      </Routes>
+        
     </div>
   );
 }

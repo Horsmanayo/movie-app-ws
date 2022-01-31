@@ -1,18 +1,15 @@
 import React from 'react'
+import Display from './Display'
+import MovieData from './MovieData'
 
 
-const MovieCard =(props) => {
+const MovieCard =({ movies }) => {
     return (
-        <div>
-            {props.movies.map((movie, index) =>
-            <div className='col'>
-                <div>
-                    <img src={movie.Poster} alt={movie.Title} />
-                </div>
-                
-            </div>)}
-            
-        </div>
+        <>
+            {movies.map((movie, key) => (
+                <Display movie= { movie } key= { movie.id } />
+            ))}   
+        </>
     )
 }
 
